@@ -155,7 +155,25 @@ video {
             cursor: pointer;
         }
     </style>
-    <script>
+</head>
+<body>
+    <header>
+        <video id="background-video" autoplay loop muted>
+        <source src="video.mp4" type="video/mp4">
+        <!-- 動画のフォーマットを追加 (WebMやOggなど) -->
+        </video>
+        <div id="mute-button" onclick="toggleMute()">音オン/オフ</div>
+        <h1>My RPGサイト</h1>
+        <nav>
+            <ul>
+                <li><a href="#">ホーム</a></li>
+                <li><a href="#">ガイド</a></li>
+                <li><a href="#">コミュニティ</a></li>
+                <li><a href="#">お問い合わせ</a></li>
+            </ul>
+        </nav>
+    </header>
+<script>
         // 音のオンオフを切り替える関数
         var video = document.getElementById("background-video");
         var muteButton = document.getElementById("mute-button");
@@ -226,25 +244,6 @@ video {
             });
         });
     </script>
-</head>
-<body>
-    <header>
-        <video id="background-video" autoplay loop muted>
-        <source src="video.mp4" type="video/mp4">
-        <!-- 動画のフォーマットを追加 (WebMやOggなど) -->
-        </video>
-        <div id="mute-button" onclick="toggleMute()">音オン/オフ</div>
-        <h1>My RPGサイト</h1>
-        <nav>
-            <ul>
-                <li><a href="#">ホーム</a></li>
-                <li><a href="#">ガイド</a></li>
-                <li><a href="#">コミュニティ</a></li>
-                <li><a href="#">お問い合わせ</a></li>
-            </ul>
-        </nav>
-    </header>
-
     <main>
         <section>
             <h2>ようこそ！</h2>
