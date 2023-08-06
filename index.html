@@ -1,217 +1,9 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IlluminaOrigin</title>
+    <!-- headセクションの内容 -->
     <style>
-        /* リセットCSS */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-html {
-            scroll-behavior: smooth; /* スムーズスクロールを有効にする */
-}
-/* ドット風のウェブフォントを読み込む */
-body {
-    font-family: 'Courier New', monospace; /* 代替のフォントを指定 */
-    font-size: 35px; /* 文字サイズを48pxに設定 */
-    color: white; /* 文字色を白に設定 */
-    text-shadow: -8px -8px 16px rgba(0, 0, 0, 1), 8px -8px 16px rgba(0, 0, 0, 1), -8px 8px 16px rgba(0, 0, 0, 1), 8px 8px 16px rgba(0, 0, 0, 1);
-    overflow-y: scroll; /* 縦スクロールを許可 */
-}
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-}
-
-h1 {
-    font-size: 50px;
-    margin: 0;
-}
-
-nav ul {
-    list-style: none;
-}
-
-nav li {
-    display: inline-block;
-    margin-right: 50px;
-}
-
-nav a {
-    text-decoration: none;
-    color: #fff;
-    transition: color 0.3s ease;
-}
-
-nav a:hover {
-    color: #ffcc00;
-}
-
-main {
-    padding: 20px;
-}
-
-section {
-    margin-bottom: 30px;
-}
-
-section h2 {
-    font-size: 50px;
-    border-bottom: 2px solid #fff;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-}
-
-section p {
-    line-height: 1.8;
-}
-
-/* アニメーション */
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-section {
-    animation: fadeIn 1s ease;
-}
-
-/* フッター */
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #333;
-    color: #fff;
-}
-
-/* ボタンデザイン */
-/* 他のCSSスタイル */
-        #mute-button {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            padding: 10px;
-            cursor: pointer;
-            text-decoration: none;
-        }
-
-        #mute-button span {
-            display: inline-block;
-            padding: 2px;
-            text-decoration: none;
-        }
-
-        /* オンの場合の下線スタイル */
-        #mute-button.on span.on-text {
-            text-decoration: underline solid;
-            text-decoration-color: white; /* 下線の色を白に指定 */
-        }
-
-        /* オフの場合の下線スタイル */
-        #mute-button.off span.off-text {
-            text-decoration: underline solid;
-            text-decoration-color: white; /* 下線の色を白に指定 */
-        }
-        .pc{
-           display: inline;
-        }
-       .sp{
-           display: none;
-       }
-/* スマートフォン対応 */
-@media screen and (max-width: 767px) {
-    body {
-        font-family: 'Courier New', monospace; /* 代替のフォントを指定 */
-        font-size: 15px; /* 文字サイズを48pxに設定 */
-        color: white; /* 文字色を白に設定 */
-        text-shadow: -2px -2px 4px rgba(0, 0, 0, 1), 2px -2px 4px rgba(0, 0, 0, 1), -2px 2px 4px rgba(0, 0, 0, 1), 2px 2px 4px rgba(0, 0, 0, 1);
-    }
-    #mute-button {
-        position: absolute;    
-        top: 30px;
-        right: 20px;
-        padding: 10px;
-        cursor: pointer;
-        text-decoration: none;
-    }
-    #mute-button span {
-            display: inline-block;
-            padding: 1px;
-            text-decoration: none;
-        }
-    header {
-        padding: 10px 20px;
-    }
-
-    h1 {
-    font-size: 30px;
-    margin: 0;
-}
-
-nav ul {
-    list-style: none;
-}
-
-nav li {
-    display: inline-block;
-    margin-right: 5px;
-}
-
-nav a {
-    text-decoration: none;
-    color: #fff;
-    transition: color 0.3s ease;
-}
-
-nav a:hover {
-    color: #ffcc00;
-}
-
-main {
-    padding: 20px;
-}
-
-section {
-    margin-bottom: 10px;
-}
-
-section h2 {
-    font-size: 18px;
-    border-bottom: 2px solid #fff;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-}
-
-section p {
-    line-height: 1.8;
-}
-.pc{
-    display: none;
-  }
-  .sp{
-    display: inline;
-  }
-}
-video {
-            position: fixed;
-            top: 0;
-            left: 0;
-            min-width: 100%;
-            min-height: 100%;
-            z-index: -1;
-        }
+        /* 画像の初期位置 */
         #start-image {
             position: fixed;
             bottom: 0;
@@ -240,8 +32,27 @@ video {
             transform: translateY(0);
         }
     </style>
+    <script>
+        // スクロールイベントの処理
+        function showElementOnScroll() {
+            var element = document.querySelector('.fixed-element');
+            var windowHeight = window.innerHeight;
+            var elementPosition = element.getBoundingClientRect().top;
+
+            if (elementPosition < windowHeight) {
+                element.classList.add('show-on-scroll');
+            }
+        }
+
+        // ページ読み込み時に実行
+        document.addEventListener('DOMContentLoaded', showElementOnScroll);
+    </script>
 </head>
 <body>
+    <!-- 画像 -->
+    <img id="start-image" class="sp" src="logo_sp.png">
+    <img id="start-image" class="pc" src="logo.png">
+
     <header>
         <video id="background-video" autoplay loop muted>
         <source src="video.mp4" type="video/mp4">
@@ -262,10 +73,6 @@ video {
     </header>
 
     <main>
-    <a href="https://karonyt.github.io/rpg">
-        <img id="start-image" class="sp" src="logo_sp.png">
-        <img id="start-image" class="pc" src="logo.png">
-    </a>
         <div class="fixed-element">
         <section>
             <h2>ようこそ！</h2>
@@ -339,19 +146,6 @@ video {
                 video.volume = currentVolume;
             }, 100);
         }
-        // ページ内のリンクをクリックした際にスムーズにスクロールする関数
-        function showElementOnScroll() {
-            var element = document.querySelector('.fixed-element');
-            var windowHeight = window.innerHeight;
-            var elementPosition = element.getBoundingClientRect().top;
-
-            if (elementPosition < windowHeight) {
-                element.classList.add('show-on-scroll');
-            }
-        }
-
-        // ページ読み込み時に実行
-        document.addEventListener('DOMContentLoaded', showElementOnScroll);
     </script>
     
 
