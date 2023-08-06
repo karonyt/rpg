@@ -185,19 +185,20 @@ video {
         // 音のオンオフを切り替える関数
         var video = document.getElementById("background-video");
         var muteButton = document.getElementById("mute-button");
-
         function toggleMute() {
             if (video.muted) {
                 video.muted = false;
                 fadeInAudio();
+                muteButton.classList.remove("on");
             } else {
+                muteButton.classList.add("on");
                 fadeOutAudio();
                 setTimeout(function() {
                     video.muted = true;
                 }, 1000); // フェードアウトが終わったら音声をミュート
+                
             }
         }
-
         // 音声をフェードイン
         function fadeInAudio() {
             var currentVolume = 0;
