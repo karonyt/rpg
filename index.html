@@ -171,7 +171,7 @@ video {
         <!-- 動画のフォーマットを追加 (WebMやOggなど) -->
         </video>
         <a id="mute-button" onclick="toggleMute()">
-        <span class="on">オン</span>｜<span class="off">オフ</span>
+        <span class="on">オン</span>｜<span class="on">オフ</span>
         </a>
         <h1>My RPGサイト</h1>
         <nav>
@@ -184,23 +184,25 @@ video {
         </nav>
     </header>
 <script>
-        // 音のオンオフを切り替える関数
-        var video = document.getElementById("background-video");
-        var muteButton = document.getElementById("mute-button");
-        function toggleMute() {
-            if (video.muted) {
-                video.muted = false;
-                fadeInAudio();
-                muteButton.classList.remove("on");
-            } else {
-                muteButton.classList.add("on");
-                fadeOutAudio();
+    var video = document.getElementById("background-video");
+    var muteButton = document.getElementById("mute-button");    
+    function toggleMute() {
+        if (video.muted) {
+            video.muted = false;
+            muteButton.classList.remove("on");
+            muteButton.classList.add("off");
+            fadeInAudio();
+        } else {
+            video.muted = true;
+            muteButton.classList.remove("off");
+            muteButton.classList.add("on");
+            fadeOutAudio();
                 setTimeout(function() {
                     video.muted = true;
                 }, 1000); // フェードアウトが終わったら音声をミュート
-                
-            }
         }
+    }
+        
         // 音声をフェードイン
         function fadeInAudio() {
             var currentVolume = 0;
