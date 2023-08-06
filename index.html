@@ -115,6 +115,16 @@ footer {
 
         #mute-button .on {
             text-decoration: none;
+            text-decoration-line: underline;
+            text-decoration-color: transparent;
+            text-decoration-style: double;
+        }
+
+        #mute-button .off {
+            text-decoration: none;
+            text-decoration-line: underline;
+            text-decoration-color: transparent;
+            text-decoration-style: solid;
         }
 /* スマートフォン対応 */
 @media screen and (max-width: 767px) {
@@ -170,8 +180,8 @@ video {
         <source src="video.mp4" type="video/mp4">
         <!-- 動画のフォーマットを追加 (WebMやOggなど) -->
         </video>
-        <a id="mute-button" onclick="toggleMute()">
-        <span class="on">オン</span>｜<span class="on">オフ</span>
+        <a id="mute-button" class="off" onclick="toggleMute()">
+        <span class="on">オン</span>｜<span class="off">オフ</span>
         </a>
         <h1>My RPGサイト</h1>
         <nav>
