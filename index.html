@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My RPGサイト</title>
@@ -11,7 +12,9 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+html {
+            scroll-behavior: smooth; /* スムーズスクロールを有効にする */
+}
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -136,6 +139,36 @@ footer {
 }
 
     </style>
+    <script>
+        // ページ内のリンクをクリックした際にスムーズにスクロールする関数
+        $(document).ready(function() {
+            $("a").on('click', function(event) {
+                if (this.hash !== "") {
+                    event.preventDefault();
+                    var hash = this.hash;
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function(){
+                        window.location.hash = hash;
+                    });
+                }
+            });
+        });
+        // ページ内のリンクをクリックした際にスムーズにスクロールする関数
+        $(document).ready(function() {
+            $("a").on('click', function(event) {
+                if (this.hash !== "") {
+                    event.preventDefault();
+                    var hash = this.hash;
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function(){
+                        window.location.hash = hash;
+                    });
+                }
+            });
+        });
+    </script>
 </head>
 <body>
     <header>
