@@ -208,7 +208,7 @@ video {
             video.muted = false; // フェードイン時にミュートを解除
             var fadeInterval = setInterval(function() {
                 currentVolume += 0.1;
-                if (currentVolume >= 1) {
+                if (currentVolume >= 0.9) {
                     clearInterval(fadeInterval);
                 }
                 video.volume = currentVolume;
@@ -220,7 +220,7 @@ video {
             var currentVolume = 1;
             var fadeInterval = setInterval(function() {
                 currentVolume -= 0.1;
-                if (currentVolume <= 0) {
+                if (currentVolume <= 0.1) {
                     clearInterval(fadeInterval);
                 }
                 video.volume = currentVolume;
