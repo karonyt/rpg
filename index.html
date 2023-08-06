@@ -228,7 +228,6 @@
             left: 0;
             z-index: 1;
         }
-
         /* 要素のスタイル */
         .fixed-element {
             position: fixed;
@@ -239,15 +238,9 @@
             padding: 20px;
             width: 100%;
             text-align: center;
-            opacity: 0;
-            transform: translateY(100%);
+            opacity: 1; /* 最初から表示 */
+            transform: translateY(0); /* 最初から表示 */
             transition: opacity 1s, transform 1s;
-        }
-
-        /* スクロールで要素が出現するアニメーション */
-        .show-on-scroll {
-            opacity: 1;
-            transform: translateY(0);
         }
     </style>
 </head>
