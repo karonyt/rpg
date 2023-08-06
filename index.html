@@ -116,7 +116,7 @@ footer {
 
         /* オンの場合の下線スタイル */
         #mute-button.on span.on-text {
-            text-decoration: underline double;
+            text-decoration: underline solid;
             text-decoration-color: white; /* 下線の色を白に指定 */
         }
 
@@ -180,7 +180,7 @@ video {
         <!-- 動画のフォーマットを追加 (WebMやOggなど) -->
         </video>
         <a id="mute-button" class="off" onclick="toggleMute()">
-        <span class="on-text">オン</span>｜<span class="off-text">オフ</span>
+        <span class="off-text">オン</span>｜<span class="on-text">オフ</span>
         </a>
         <h1>My RPGサイト</h1>
         <nav>
@@ -237,20 +237,6 @@ video {
                 video.volume = currentVolume;
             }, 100);
         }
-        // ページ内のリンクをクリックした際にスムーズにスクロールする関数
-        $(document).ready(function() {
-            $("a").on('click', function(event) {
-                if (this.hash !== "") {
-                    event.preventDefault();
-                    var hash = this.hash;
-                    $('html, body').animate({
-                        scrollTop: $(hash).offset().top
-                    }, 800, function(){
-                        window.location.hash = hash;
-                    });
-                }
-            });
-        });
         // ページ内のリンクをクリックした際にスムーズにスクロールする関数
         $(document).ready(function() {
             $("a").on('click', function(event) {
