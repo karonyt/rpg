@@ -211,6 +211,33 @@ video {
             min-height: 100%;
             z-index: -1;
         }
+        #start-image {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        /* 要素のスタイル */
+        .fixed-element {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            z-index: 2;
+            background-color: #f0f0f0;
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(100%);
+            transition: opacity 1s, transform 1s;
+        }
+
+        /* スクロールで要素が出現するアニメーション */
+        .show-on-scroll {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body>
@@ -232,6 +259,40 @@ video {
             </ul>
         </nav>
     </header>
+
+    <main>
+    <a href="https://karonyt.github.io/rpg">
+        <img id="start-image" class="sp" src="logo_sp.png">
+        <img id="start-image" class="pc" src="logo.png">
+    </a>
+        <div class="fixed-element">
+        <section>
+            <h2>ようこそ！</h2>
+            <p>ここにあなたのRPGサイトの紹介文を書きます。</p>
+        </section>
+
+        <section>
+            <h2>最新情報</h2>
+            <ul>
+                <li><a href="#">アップデートのお知らせ</a></li>
+                <li><a href="#">新しいキャンペーンの紹介</a></li>
+                <li><a href="#">プレイヤー募集中</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>ガイド</h2>
+            <p>ここにRPGの初心者向けガイドやルールブックのリンクを掲載します。</p>
+        </section>
+
+        <section>
+            <h2>コミュニティ</h2>
+            <p>オンラインフォーラムやコミュニティのリンクを掲載して、RPGファン同士の交流を促進します。</p>
+        </section>
+        
+        </div>
+        
+    </main>
 <script>
     var video = document.getElementById("background-video");
     var muteButton = document.getElementById("mute-button");    
@@ -278,49 +339,20 @@ video {
             }, 100);
         }
         // ページ内のリンクをクリックした際にスムーズにスクロールする関数
-        $(document).ready(function() {
-            $("a").on('click', function(event) {
-                if (this.hash !== "") {
-                    event.preventDefault();
-                    var hash = this.hash;
-                    $('html, body').animate({
-                        scrollTop: $(hash).offset().top
-                    }, 800, function(){
-                        window.location.hash = hash;
-                    });
-                }
-            });
-        });
+        function showElementOnScroll() {
+            var element = document.querySelector('.fixed-element');
+            var windowHeight = window.innerHeight;
+            var elementPosition = element.getBoundingClientRect().top;
+
+            if (elementPosition < windowHeight) {
+                element.classList.add('show-on-scroll');
+            }
+        }
+
+        // ページ読み込み時に実行
+        document.addEventListener('DOMContentLoaded', showElementOnScroll);
     </script>
-    <main>
-        <section>
-            <h2>ようこそ！</h2>
-            <p>ここにあなたのRPGサイトの紹介文を書きます。</p>
-        </section>
-
-        <section>
-            <h2>最新情報</h2>
-            <ul>
-                <li><a href="#">アップデートのお知らせ</a></li>
-                <li><a href="#">新しいキャンペーンの紹介</a></li>
-                <li><a href="#">プレイヤー募集中</a></li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>ガイド</h2>
-            <p>ここにRPGの初心者向けガイドやルールブックのリンクを掲載します。</p>
-        </section>
-
-        <section>
-            <h2>コミュニティ</h2>
-            <p>オンラインフォーラムやコミュニティのリンクを掲載して、RPGファン同士の交流を促進します。</p>
-        </section>
-        <a href="https://karonyt.github.io/rpg">
-        <img class="sp" src="logo_sp.png">
-        <img class="pc" src="logo.png">
-    </a>
-    </main>
+    
 
     <footer>
         <p>&copy; 2023 IlluminaOrigin. All rights reserved.<br>Music by 舞音はく.</p>
