@@ -96,7 +96,8 @@ footer {
 }
 
 /* ボタンデザイン */
-#mute-button {
+/* 他のCSSスタイル */
+        #mute-button {
             position: absolute;
             top: 20px;
             right: 20px;
@@ -110,20 +111,19 @@ footer {
         #mute-button span {
             display: inline-block;
             padding: 5px;
+            text-decoration: none;
         }
 
         /* オンの場合の下線スタイル */
         #mute-button.on span.on-text {
-            text-decoration: underline;
-            text-decoration-style: double;
-            text-decoration-color: transparent;
+            text-decoration: underline double;
+            text-decoration-color: white; /* 下線の色を白に指定 */
         }
 
         /* オフの場合の下線スタイル */
         #mute-button.off span.off-text {
-            text-decoration: underline;
-            text-decoration-style: solid;
-            text-decoration-color: transparent;
+            text-decoration: underline solid;
+            text-decoration-color: white; /* 下線の色を白に指定 */
         }
 /* スマートフォン対応 */
 @media screen and (max-width: 767px) {
