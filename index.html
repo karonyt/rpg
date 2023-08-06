@@ -15,12 +15,15 @@
 html {
             scroll-behavior: smooth; /* スムーズスクロールを有効にする */
 }
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f0f0f0;
-}
+/* ドット風のウェブフォントを読み込む */
+        @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
+body {
+    font-family: 'VT323', monospace; /* ドット風のウェブフォントを適用 */
+    font-size: 48px; /* 文字サイズを48pxに設定 */
+    color: white; /* 文字色を白に設定 */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
 header {
     background-color: #333;
     color: #fff;
