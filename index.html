@@ -137,9 +137,66 @@ footer {
         text-align: center;
     }
 }
-
+video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+        }
+        #mute-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 50%;
+            cursor: pointer;
+        }
     </style>
     <script>
+        // 音のオンオフを切り替える関数
+        var video = document.getElementById("background-video");
+        var muteButton = document.getElementById("mute-button");
+
+        function toggleMute() {
+            if (video.muted) {
+                video.muted = false;
+                fadeInAudio();
+            } else {
+                fadeOutAudio();
+                setTimeout(function() {
+                    video.muted = true;
+                }, 1000); // フェードアウトが終わったら音声をミュート
+            }
+        }
+
+        // 音声をフェードイン
+        function fadeInAudio() {
+            var currentVolume = 0;
+            video.volume = 0; // ミュートの場合はvolumeが0なので、一時的に設定
+            video.muted = false; // フェードイン時にミュートを解除
+            var fadeInterval = setInterval(function() {
+                currentVolume += 0.1;
+                if (currentVolume >= 1) {
+                    clearInterval(fadeInterval);
+                }
+                video.volume = currentVolume;
+            }, 100);
+        }
+
+        // 音声をフェードアウト
+        function fadeOutAudio() {
+            var currentVolume = 1;
+            var fadeInterval = setInterval(function() {
+                currentVolume -= 0.1;
+                if (currentVolume <= 0) {
+                    clearInterval(fadeInterval);
+                }
+                video.volume = currentVolume;
+            }, 100);
+        }
         // ページ内のリンクをクリックした際にスムーズにスクロールする関数
         $(document).ready(function() {
             $("a").on('click', function(event) {
@@ -172,6 +229,11 @@ footer {
 </head>
 <body>
     <header>
+        <video id="background-video" autoplay loop muted>
+        <source src="video.mp4" type="video/mp4">
+        <!-- 動画のフォーマットを追加 (WebMやOggなど) -->
+        </video>
+        <div id="mute-button" onclick="toggleMute()">音オン/オフ</div>
         <h1>My RPGサイト</h1>
         <nav>
             <ul>
