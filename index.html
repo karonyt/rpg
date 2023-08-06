@@ -123,6 +123,12 @@ footer {
             text-decoration: underline solid;
             text-decoration-color: white; /* 下線の色を白に指定 */
         }
+        .pc{
+    display: block;
+  }
+  .sp{
+    display: none;
+  }
 /* スマートフォン対応 */
 @media screen and (max-width: 767px) {
     body {
@@ -182,11 +188,12 @@ section h2 {
 section p {
     line-height: 1.8;
 }
-.logo {
-        width: 100; /* 幅を画面幅いっぱいに設定 */
-        height: auto; /* 縦横比を保持 */
-    }
-}
+.pc{
+    display: none;
+  }
+  .sp{
+    display: block;
+  }
 video {
             position: fixed;
             top: 0;
@@ -302,7 +309,8 @@ video {
             <p>オンラインフォーラムやコミュニティのリンクを掲載して、RPGファン同士の交流を促進します。</p>
         </section>
         <a href="https://karonyt.github.io/rpg">
-        <img class="logo" src="logo.png">
+        <img class="sp" src="logo_sp.png">
+        <img class="pc" src="logo.png">
     </a>
     </main>
 
