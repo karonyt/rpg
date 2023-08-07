@@ -89,7 +89,7 @@
             line-height: 1.8;
         }
         .empty-space {
-            height: var(--window-height - 250, 100vh); /* --window-heightが未定義の場合は100vhを使用 */
+            height: calc(var(--adjusted-window-height, 100vh));
             width: 100%;
         }
         /* アニメーション */
@@ -273,12 +273,12 @@
             <img id="start-image" class="pc" src="logo.png">
         </a>
         <div class="fixed-element">
-            <section>
+            <section class="scroll-animate-element">
                 <h2>ようこそ！</h2>
                 <p>ここにあなたのRPGサイトの紹介文を書きます。</p>
             </section>
 
-            <section>
+            <section class="scroll-animate-element">
                 <h2>最新情報</h2>
                 <ul>
                     <li><a href="#">アップデートのお知らせ</a></li>
@@ -287,17 +287,17 @@
                 </ul>
             </section>
 
-            <section>
+            <section class="scroll-animate-element">
                 <h2>ガイド</h2>
                 <p>ここにRPGの初心者向けガイドやルールブックのリンクを掲載します。</p>
             </section>
 
-            <section>
+            <section class="scroll-animate-element">
                 <h2>コミュニティ</h2>
                 <p>オンラインフォーラムやコミュニティのリンクを掲載して、RPGファン同士の交流を促進します。</p>
             </section>
             
-            <footer>
+            <footer class="scroll-animate-element">
                 <p>&copy; 2023 IlluminaOrigin. All rights reserved.<br>Music by 舞音はく.</p>
             </footer>
         </div>
@@ -307,9 +307,18 @@
     <script>
         var video = document.getElementById("background-video");
         var muteButton = document.getElementById("mute-button");   
+        // windowの高さに応じてCSS変数に異なる値を設定する関数
         function setWindowHeight() {
             const windowHeight = window.innerHeight;
-            document.documentElement.style.setProperty('--window-height', `${windowHeight}px`);
+            let adjustedHeight;
+            if (window.innerWidth >= 768) {
+                // PCの場合
+                adjustedHeight = windowHeight - 250;
+            } else {
+                // スマートフォンの場合
+                adjustedHeight = windowHeight - 75;
+            }
+            document.documentElement.style.setProperty('--adjusted-window-height', `${adjustedHeight}px`);
         }
         // ページロード時とウィンドウサイズ変更時にsetWindowHeight関数を実行
         window.addEventListener('load', setWindowHeight);
