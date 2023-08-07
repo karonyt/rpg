@@ -36,7 +36,7 @@
         /* スクロールして要素が画面に表示されたらフェードインする */
         .scroll-animate-element.fade-in {
             opacity: 1;
-            transition: opacity 1s ease;
+            transition: opacity 2s ease;
         }
         header {
             background-color: #333;
@@ -247,6 +247,10 @@
             .air-space {
                 height: 20px
                 width: 100%
+            }
+            .scroll-animate-element {
+                opacity: 0;
+                margin: 50px 0; /* 上下に50pxのマージンを追加 */
             }
         }
         video {
