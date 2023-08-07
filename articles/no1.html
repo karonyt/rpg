@@ -124,7 +124,6 @@
             padding: 20px;
             margin-left: 50px; /* 左側に50pxのマージンを追加 */
             margin-right: 50px;
-            background-color: #444;
         }
 
         section {
@@ -140,6 +139,17 @@
 
         section p {
             line-height: 1.8;
+        }
+        .empty-space {
+            height: calc(var(--adjusted-window-height, 100vh));
+            width: 100%;
+            font-family: 'Courier New', monospace; /* 代替のフォントを指定 */
+            font-size: 80px; /* 文字サイズを80pxに設定 */
+            color: white; /* 文字色を白に設定 */
+            text-shadow: -8px -8px 16px rgba(0, 0, 0, 1), 8px -8px 16px rgba(0, 0, 0, 1), -8px 8px 16px rgba(0, 0, 0, 1), 8px 8px 16px rgba(0, 0, 0, 1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         .air-space {
             height: 200px
