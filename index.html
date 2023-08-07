@@ -16,17 +16,14 @@
         html {
             scroll-behavior: smooth; /* スムーズスクロールを有効にする */
             height: 100%; /* 追加：html要素の高さを100%に設定 */
-            overflow-y: scroll; /* 追加：html要素のスクロールを有効にする */
         }
 
         /* ドット風のウェブフォントを読み込む */
         body {
             font-family: 'Courier New', monospace; /* 代替のフォントを指定 */
-            font-size: 35px; /* 文字サイズを48pxに設定 */
+            font-size: 35px; /* 文字サイズを35pxに設定 */
             color: white; /* 文字色を白に設定 */
             text-shadow: -8px -8px 16px rgba(0, 0, 0, 1), 8px -8px 16px rgba(0, 0, 0, 1), -8px 8px 16px rgba(0, 0, 0, 1), 8px 8px 16px rgba(0, 0, 0, 1);
-            overflow-y: scroll; /* 縦スクロールを許可 */
-            width: 100vw;
             margin: 0;
             padding: 0;
             overflow: hidden visible;
@@ -91,6 +88,13 @@
         .empty-space {
             height: calc(var(--adjusted-window-height, 100vh));
             width: 100%;
+            font-family: 'Courier New', monospace; /* 代替のフォントを指定 */
+            font-size: 45px; /* 文字サイズを35pxに設定 */
+            color: white; /* 文字色を白に設定 */
+            text-shadow: -8px -8px 16px rgba(0, 0, 0, 1), 8px -8px 16px rgba(0, 0, 0, 1), -8px 8px 16px rgba(0, 0, 0, 1), 8px 8px 16px rgba(0, 0, 0, 1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         /* アニメーション */
         @keyframes fadeIn {
@@ -228,6 +232,13 @@
             .empty-space {
                 height: calc(var(--adjusted-window-height, 100vh));
                 width: 100%;
+                font-family: 'Courier New', monospace; /* 代替のフォントを指定 */
+                font-size: 20px; /* 文字サイズを35pxに設定 */
+                color: white; /* 文字色を白に設定 */
+                text-shadow: -4px -4px 8px rgba(0, 0, 0, 1), 4px -4px 8px rgba(0, 0, 0, 1), -4px 4px 8px rgba(0, 0, 0, 1), 4px 4px 8px rgba(0, 0, 0, 1);
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
         }
         video {
@@ -313,7 +324,7 @@
             let adjustedHeight;
             if (window.innerWidth >= 768) {
                 // PCの場合
-                adjustedHeight = windowHeight - 400;
+                adjustedHeight = windowHeight - 420;
             } else {
                 // スマートフォンの場合
                 adjustedHeight = windowHeight - 215;
