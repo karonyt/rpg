@@ -352,6 +352,7 @@
         });
         // ウィンドウのリサイズ時にも実行
         window.addEventListener('resize', setWindowHeight);
+        window.addEventListener('scroll', onScroll);
         function toggleMute() {
             if (video.muted) {
                 video.muted = false;
