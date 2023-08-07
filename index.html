@@ -345,6 +345,13 @@
                 }
             });
         }
+        // ページロード時に実行
+        window.addEventListener('load', function () {
+            setWindowHeight(); // ウィンドウの高さを設定
+            onScroll(); // スクロールアニメーションを適用
+        });
+        // ウィンドウのリサイズ時にも実行
+        window.addEventListener('resize', setWindowHeight);
         function toggleMute() {
             if (video.muted) {
                 video.muted = false;
@@ -387,8 +394,6 @@
                 video.volume = currentVolume;
             }, 100);
         }
-        // ページ読み込み時に実行
-        document.addEventListener('DOMContentLoaded', showElementOnScroll);
     </script>
 </body>
 </html>
