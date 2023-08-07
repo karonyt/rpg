@@ -226,7 +226,7 @@
                 display: inline;
             }
             .empty-space {
-                height: var(--window-height - 75, 100vh); /* --window-heightが未定義の場合は100vhを使用 */
+                height: calc(var(--adjusted-window-height, 100vh));
                 width: 100%;
             }
         }
@@ -313,10 +313,10 @@
             let adjustedHeight;
             if (window.innerWidth >= 768) {
                 // PCの場合
-                adjustedHeight = windowHeight - 300;
+                adjustedHeight = windowHeight - 400;
             } else {
                 // スマートフォンの場合
-                adjustedHeight = windowHeight - 115;
+                adjustedHeight = windowHeight - 215;
             }
             document.documentElement.style.setProperty('--adjusted-window-height', `${adjustedHeight}px`);
         }
