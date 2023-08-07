@@ -214,6 +214,9 @@
         .sp {
             display: none;
         }
+        .tb {
+            display: none;
+        }
 /* 真ん中のサイズ対応 */
 @media screen and (max-width: 1534px) {
             body {
@@ -292,6 +295,9 @@
                 display: none;
             }
             .sp {
+                display: inline;
+            }
+            .tb {
                 display: inline;
             }
             .empty-space {
@@ -394,6 +400,9 @@
             .sp {
                 display: inline;
             }
+            .tb {
+                display: none;
+            }
             .empty-space {
                 height: calc(var(--adjusted-window-height, 100vh));
                 width: 100%;
@@ -456,6 +465,7 @@
         <a href="https://karonyt.github.io/rpg">
             <img id="start-image" class="sp" src="logo_sp.png">
             <img id="start-image" class="pc" src="logo.png">
+            <img id="start-image" class="tb" src="logo_tb.png">
         </a>
         <div class="fixed-element">
             
