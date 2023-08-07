@@ -295,7 +295,7 @@
                 display: none;
             }
             .sp {
-                display: inline;
+                display: none;
             }
             .tb {
                 display: inline;
@@ -507,9 +507,11 @@
         function setWindowHeight() {
             const windowHeight = window.innerHeight;
             let adjustedHeight;
-            if (window.innerWidth >= 768) {
+            if (window.innerWidth >= 1535) {
                 // PCの場合
                 adjustedHeight = windowHeight - 420;
+            } else if (window.innerWidth >= 768) {
+                adjustedHeight = windowHeight - 140;
             } else {
                 // スマートフォンの場合
                 adjustedHeight = windowHeight - 215;
