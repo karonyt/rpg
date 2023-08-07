@@ -313,10 +313,10 @@
             let adjustedHeight;
             if (window.innerWidth >= 768) {
                 // PCの場合
-                adjustedHeight = windowHeight - 250;
+                adjustedHeight = windowHeight - 300;
             } else {
                 // スマートフォンの場合
-                adjustedHeight = windowHeight - 75;
+                adjustedHeight = windowHeight - 115;
             }
             document.documentElement.style.setProperty('--adjusted-window-height', `${adjustedHeight}px`);
         }
@@ -376,18 +376,6 @@
                 video.volume = currentVolume;
             }, 100);
         }
-
-        // ページ内のリンクをクリックした際にスムーズにスクロールする関数
-        function showElementOnScroll() {
-            var element = document.querySelector('.fixed-element');
-            var windowHeight = window.innerHeight;
-            var elementPosition = element.getBoundingClientRect().top;
-
-            if (elementPosition < windowHeight) {
-                element.classList.add('show-on-scroll');
-            }
-        }
-
         // ページ読み込み時に実行
         document.addEventListener('DOMContentLoaded', showElementOnScroll);
     </script>
