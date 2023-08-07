@@ -26,8 +26,20 @@
             color: white; /* 文字色を白に設定 */
             text-shadow: -8px -8px 16px rgba(0, 0, 0, 1), 8px -8px 16px rgba(0, 0, 0, 1), -8px 8px 16px rgba(0, 0, 0, 1), 8px 8px 16px rgba(0, 0, 0, 1);
             overflow-y: scroll; /* 縦スクロールを許可 */
+            width: 100vw;
+            margin: 0;
+            padding: 0;
+            overflow: hidden visible;
         }
-
+        /* アニメーションを初期状態で非表示にする */
+        .scroll-animate-element {
+            opacity: 0;
+        }
+        /* スクロールして要素が画面に表示されたらフェードインする */
+        .scroll-animate-element.fade-in {
+            opacity: 1;
+            transition: opacity 1s ease;
+        }
         header {
             background-color: #333;
             color: #fff;
@@ -77,7 +89,7 @@
             line-height: 1.8;
         }
         .empty-space {
-            height: 65vh;
+            height: var(--window-height - 250, 100vh); /* --window-heightが未定義の場合は100vhを使用 */
             width: 100%;
         }
         /* アニメーション */
@@ -213,6 +225,10 @@
             .sp {
                 display: inline;
             }
+            .empty-space {
+                height: var(--window-height - 75, 100vh); /* --window-heightが未定義の場合は100vhを使用 */
+                width: 100%;
+            }
         }
         video {
             position: fixed;
@@ -290,7 +306,25 @@
 
     <script>
         var video = document.getElementById("background-video");
-        var muteButton = document.getElementById("mute-button");    
+        var muteButton = document.getElementById("mute-button");   
+        function setWindowHeight() {
+            const windowHeight = window.innerHeight;
+            document.documentElement.style.setProperty('--window-height', `${windowHeight}px`);
+        }
+        // ページロード時とウィンドウサイズ変更時にsetWindowHeight関数を実行
+        window.addEventListener('load', setWindowHeight);
+        window.addEventListener('resize', setWindowHeight);
+        function onScroll() {
+            const elements = document.querySelectorAll('.scroll-animate-element');
+            elements.forEach((element) => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                // 要素が画面内に入ったらクラスを追加してアニメーションを付ける
+                if (elementTop < windowHeight) {
+                    element.classList.add('fade-in');
+                }
+            });
+        }
         function toggleMute() {
             if (video.muted) {
                 video.muted = false;
