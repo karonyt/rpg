@@ -64,6 +64,7 @@ a {
 a:hover {
     color: orange; /* オレンジ色に設定 */
 }
+
 nav a {
     text-decoration: none;
     color: #fff;
@@ -176,6 +177,10 @@ footer {
     padding: 10px;
     cursor: pointer;
     text-decoration: none;
+}
+
+#mute-button:hover {
+    color: white; /* 白色に上書き設定 */
 }
 
 #mute-button span {
