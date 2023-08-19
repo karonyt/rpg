@@ -1,490 +1,155 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta name="msapplication-square70x70logo" content="/site-tile-70x70.png">
-<meta name="msapplication-square150x150logo" content="/site-tile-150x150.png">
-<meta name="msapplication-wide310x150logo" content="/site-tile-310x150.png">
-<meta name="msapplication-square310x310logo" content="/site-tile-310x310.png">
-<meta name="msapplication-TileColor" content="#0078d7">
-<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="favicon/favicon.ico">
-<link rel="icon" type="image/vnd.microsoft.icon" href="favicon/favicon.ico">
-<link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-touch-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-touch-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-touch-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-touch-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-touch-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-touch-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-touch-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-touch-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="36x36" href="favicon/android-chrome-36x36.png">
-<link rel="icon" type="image/png" sizes="48x48" href="favicon/android-chrome-48x48.png">
-<link rel="icon" type="image/png" sizes="72x72" href="favicon/android-chrome-72x72.png">
-<link rel="icon" type="image/png" sizes="96x96" href="favicon/android-chrome-96x96.png">
-<link rel="icon" type="image/png" sizes="128x128" href="favicon/android-chrome-128x128.png">
-<link rel="icon" type="image/png" sizes="144x144" href="favicon/android-chrome-144x144.png">
-<link rel="icon" type="image/png" sizes="152x152" href="favicon/android-chrome-152x152.png">
-<link rel="icon" type="image/png" sizes="192x192" href="favicon/android-chrome-192x192.png">
-<link rel="icon" type="image/png" sizes="256x256" href="favicon/android-chrome-256x256.png">
-<link rel="icon" type="image/png" sizes="384x384" href="favicon/android-chrome-384x384.png">
-<link rel="icon" type="image/png" sizes="512x512" href="favicon/android-chrome-512x512.png">
-<link rel="icon" type="image/png" sizes="36x36" href="favicon/icon-36x36.png">
-<link rel="icon" type="image/png" sizes="48x48" href="favicon/icon-48x48.png">
-<link rel="icon" type="image/png" sizes="72x72" href="favicon/icon-72x72.png">
-<link rel="icon" type="image/png" sizes="96x96" href="favicon/icon-96x96.png">
-<link rel="icon" type="image/png" sizes="128x128" href="favicon/icon-128x128.png">
-<link rel="icon" type="image/png" sizes="144x144" href="favicon/icon-144x144.png">
-<link rel="icon" type="image/png" sizes="152x152" href="favicon/icon-152x152.png">
-<link rel="icon" type="image/png" sizes="160x160" href="favicon/icon-160x160.png">
-<link rel="icon" type="image/png" sizes="192x192" href="favicon/icon-192x192.png">
-<link rel="icon" type="image/png" sizes="196x196" href="favicon/icon-196x196.png">
-<link rel="icon" type="image/png" sizes="256x256" href="favicon/icon-256x256.png">
-<link rel="icon" type="image/png" sizes="384x384" href="favicon/icon-384x384.png">
-<link rel="icon" type="image/png" sizes="512x512" href="favicon/icon-512x512.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon/icon-16x16.png">
-<link rel="icon" type="image/png" sizes="24x24" href="favicon/icon-24x24.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon/icon-32x32.png">
-<link rel="manifest" href="favicon/manifest.json">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 Not Found</title>
-    <style>
-        /* リセットCSS */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <head>
+        <!-- ファビコンを指定 -->
+        <meta name="msapplication-square70x70logo" content="/site-tile-70x70.png">
+        <meta name="msapplication-square150x150logo" content="/site-tile-150x150.png">
+        <meta name="msapplication-wide310x150logo" content="/site-tile-310x150.png">
+        <meta name="msapplication-square310x310logo" content="/site-tile-310x310.png">
+        <meta name="msapplication-TileColor" content="#0078d7">
+        <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://karonyt.github.io/rpg/favicon/favicon.ico">
+        <link rel="icon" type="image/vnd.microsoft.icon" href="https://karonyt.github.io/rpg/favicon/favicon.ico">
+        <link rel="apple-touch-icon" sizes="57x57" href="https://karonyt.github.io/rpg/favicon/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="https://karonyt.github.io/rpg/favicon/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="https://karonyt.github.io/rpg/favicon/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="https://karonyt.github.io/rpg/favicon/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="https://karonyt.github.io/rpg/favicon/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="https://karonyt.github.io/rpg/favicon/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="https://karonyt.github.io/rpg/favicon/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="https://karonyt.github.io/rpg/favicon/apple-touch-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="https://karonyt.github.io/rpg/favicon/apple-touch-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="36x36" href="https://karonyt.github.io/rpg/favicon/android-chrome-36x36.png">
+        <link rel="icon" type="image/png" sizes="48x48" href="https://karonyt.github.io/rpg/favicon/android-chrome-48x48.png">
+        <link rel="icon" type="image/png" sizes="72x72" href="https://karonyt.github.io/rpg/favicon/android-chrome-72x72.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="https://karonyt.github.io/rpg/favicon/android-chrome-96x96.png">
+        <link rel="icon" type="image/png" sizes="128x128" href="https://karonyt.github.io/rpg/favicon/android-chrome-128x128.png">
+        <link rel="icon" type="image/png" sizes="144x144" href="https://karonyt.github.io/rpg/favicon/android-chrome-144x144.png">
+        <link rel="icon" type="image/png" sizes="152x152" href="https://karonyt.github.io/rpg/favicon/android-chrome-152x152.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="https://karonyt.github.io/rpg/favicon/android-chrome-192x192.png">
+        <link rel="icon" type="image/png" sizes="256x256" href="https://karonyt.github.io/rpg/favicon/android-chrome-256x256.png">
+        <link rel="icon" type="image/png" sizes="384x384" href="https://karonyt.github.io/rpg/favicon/android-chrome-384x384.png">
+        <link rel="icon" type="image/png" sizes="512x512" href="https://karonyt.github.io/rpg/favicon/android-chrome-512x512.png">
+        <link rel="icon" type="image/png" sizes="36x36" href="https://karonyt.github.io/rpg/favicon/icon-36x36.png">
+        <link rel="icon" type="image/png" sizes="48x48" href="https://karonyt.github.io/rpg/favicon/icon-48x48.png">
+        <link rel="icon" type="image/png" sizes="72x72" href="https://karonyt.github.io/rpg/favicon/icon-72x72.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="https://karonyt.github.io/rpg/favicon/icon-96x96.png">
+        <link rel="icon" type="image/png" sizes="128x128" href="https://karonyt.github.io/rpg/favicon/icon-128x128.png">
+        <link rel="icon" type="image/png" sizes="144x144" href="https://karonyt.github.io/rpg/favicon/icon-144x144.png">
+        <link rel="icon" type="image/png" sizes="152x152" href="https://karonyt.github.io/rpg/favicon/icon-152x152.png">
+        <link rel="icon" type="image/png" sizes="160x160" href="https://karonyt.github.io/rpg/favicon/icon-160x160.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="https://karonyt.github.io/rpg/favicon/icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="196x196" href="https://karonyt.github.io/rpg/favicon/icon-196x196.png">
+        <link rel="icon" type="image/png" sizes="256x256" href="https://karonyt.github.io/rpg/favicon/icon-256x256.png">
+        <link rel="icon" type="image/png" sizes="384x384" href="https://karonyt.github.io/rpg/favicon/icon-384x384.png">
+        <link rel="icon" type="image/png" sizes="512x512" href="https://karonyt.github.io/rpg/favicon/icon-512x512.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="https://karonyt.github.io/rpg/favicon/icon-16x16.png">
+        <link rel="icon" type="image/png" sizes="24x24" href="https://karonyt.github.io/rpg/favicon/icon-24x24.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="https://karonyt.github.io/rpg/favicon/icon-32x32.png">
+        <link rel="manifest" href="https://karonyt.github.io/rpg/favicon/manifest.json">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>404 Not Found</title>
 
-        html {
-            scroll-behavior: smooth; /* スムーズスクロールを有効にする */
-            height: 100%; /* 追加：html要素の高さを100%に設定 */
-        }
+        <!-- CSSファイルを指定 -->
+        <link rel="stylesheet" type="text/css" href="https://karonyt.github.io/rpg/global.css">
+    </head>
+    <body>
+        <!-- Header(上のやつ) -->
+        <header>
+            <!-- 背景の動画 -->
+            <video id="background-video" autoplay loop muted>
+                <source src="https://karonyt.github.io/rpg/video.mp4" type="video/mp4">
+            </video>
+            <a id="mute-button" class="on" onclick="toggleMute()">
+                Sound:<span class="off-text">On</span>|<span class="on-text">Off</span>
+            </a>
+            <h1>IlluminaOrigin</h1>
+            <nav>
+                <ul><br class="sp">
+                    <li><a href="index.html">ホーム</a></li>
+                    <li><a href="info.html">情報</a></li>
+                    <li><a href="developer.html">制作陣</a></li>
+                    <li><a href="contact.html">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </header>
 
-        /* ドット風のウェブフォントを読み込む */
-        body {
-            font-family: 'Courier New', monospace; /* 代替のフォントを指定 */
-            font-size: 35px; /* 文字サイズを35pxに設定 */
-            color: white; /* 文字色を白に設定 */
-            text-shadow: -8px -8px 16px rgba(0, 0, 0, 1), 8px -8px 16px rgba(0, 0, 0, 1), -8px 8px 16px rgba(0, 0, 0, 1), 8px 8px 16px rgba(0, 0, 0, 1);
-            margin: 0;
-            padding: 0;
-            overflow: hidden visible;
-        }
-        /* アニメーションを初期状態で非表示にする */
-        .scroll-animate-element {
-            opacity: 0;
-            margin: 200px 0; /* 上下に50pxのマージンを追加 */
-        }
-        /* スクロールして要素が画面に表示されたらフェードインする */
-        .scroll-animate-element.fade-in {
-            opacity: 1;
-            transition: opacity 2s ease;
-        }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-        }
-
-        h1 {
-            font-size: 50px;
-            margin: 0;
-            color: "black"
-        }
-
-        nav ul {
-            list-style: none;
-        }
-
-        nav li {
-            display: inline-block;
-            margin-right: 50px;
-        }
-        a {
-            text-decoration: none; /* 下線をなくす */
-            color: #fff;
-            transition: color 0.3s ease;
-        }
-        /* マウスホバー時のスタイルをカスタマイズ（オプション） */
-        a:hover {
-            color: orange; /* オレンジ色に設定 */
-        }
-        nav a {
-            text-decoration: none;
-            color: #fff;
-            transition: color 0.3s ease;
-        }
-
-        nav a:hover {
-            color: #ffcc00;
-        }
-
-        main {
-            padding: 20px;
-            margin-left: 50px; /* 左側に50pxのマージンを追加 */
-            margin-right: 50px;
-        }
-
-        section {
-            margin-bottom: 30px;
-        }
-
-        section h2 {
-            font-size: 50px;
-            border-bottom: 2px solid #fff;
-            padding-bottom: 10px;
-            margin-bottom: 10px;
-        }
-
-        section p {
-            line-height: 1.8;
-        }
-        .empty-space {
-            height: calc(var(--adjusted-window-height, 100vh));
-            width: 100%;
-            font-family: 'Courier New', monospace; /* 代替のフォントを指定 */
-            font-size: 80px; /* 文字サイズを80pxに設定 */
-            color: white; /* 文字色を白に設定 */
-            text-shadow: -8px -8px 16px rgba(0, 0, 0, 1), 8px -8px 16px rgba(0, 0, 0, 1), -8px 8px 16px rgba(0, 0, 0, 1), 8px 8px 16px rgba(0, 0, 0, 1);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .air-space {
-            height: 200px
-            width: 100%
-        }
-        /* アニメーション */
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        section {
-            animation: fadeIn 1s ease;
-        }
-
-        /* フッター */
-        footer {
-            text-align: center;
-            background-color: #333;
-            color: #fff;   
-            padding: 10px;
-        }
-
-        /* ボタンデザイン */
-        #mute-button {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            padding: 10px;
-            cursor: pointer;
-            text-decoration: none;
-        }
-
-        #mute-button span {
-            display: inline-block;
-            padding: 2px;
-            text-decoration: none;
-        }
-
-        /* オンの場合の下線スタイル */
-        #mute-button.on span.on-text {
-            text-decoration: underline solid;
-            text-decoration-color: white; /* 下線の色を白に指定 */
-        }
-
-        /* オフの場合の下線スタイル */
-        #mute-button.off span.off-text {
-            text-decoration: underline solid;
-            text-decoration-color: white; /* 下線の色を白に指定 */
-        }
-
-        .pc {
-            display: inline;
-        }
-
-        .sp {
-            display: none;
-        }
-
-        /* スマートフォン対応 */
-        @media screen and (max-width: 767px) {
-            body {
-                font-family: 'Courier New', monospace; /* 代替のフォントを指定 */
-                font-size: 15px; /* 文字サイズを48pxに設定 */
-                color: white; /* 文字色を白に設定 */
-                text-shadow: -2px -2px 4px rgba(0, 0, 0, 1), 2px -2px 4px rgba(0, 0, 0, 1), -2px 2px 4px rgba(0, 0, 0, 1), 2px 2px 4px rgba(0, 0, 0, 1);
-            }
-            #mute-button {
-                position: absolute;
-                top: 30px;
-                right: 20px;
-                padding: 10px;
-                cursor: pointer;
-                text-decoration: none;
-            }
-            #mute-button span {
-                display: inline-block;
-                padding: 1px;
-                text-decoration: none;
-            }
-            header {
-                padding: 10px 20px;
-            }
-            footer {
+        <!-- 404ページ用のスタイル -->
+        <style>
+            div {
                 text-align: center;
-                background-color: #333;
-                color: #fff;
-                padding: 10px;
             }
-            h1 {
-                font-size: 30px;
-                margin: 0;
-            }
-
-            nav ul {
-                list-style: none;
-            }
-
-            nav li {
-                display: inline-block;
-                margin-right: 5px;
-            }
-
-            nav a {
-                text-decoration: none;
-                color: #fff;
-                transition: color 0.3s ease;
-            }
-
-            nav a:hover {
-                color: #ffcc00;
-            }
-
-            main {
-                padding: 20px;
-                margin-left: 20px; /* 左側に20pxのマージンを追加 */
-                margin-right: 20px; /* 右側に20pxのマージンを追加 */
-            }
-
-            section {
-                margin-bottom: 10px;
-            }
-
-            section h2 {
-                font-size: 18px;
-                border-bottom: 2px solid #fff;
-                padding-bottom: 10px;
-                margin-bottom: 10px;
-            }
-
-            section p {
-                line-height: 1.8;
-            }
-            .pc {
-                display: none;
-            }
-            .sp {
-                display: inline;
-            }
-            .empty-space {
-                height: calc(var(--adjusted-window-height, 100vh));
+        
+            .game-container {
+                position: relative;
                 width: 100%;
-                font-family: 'Courier New', monospace; /* 代替のフォントを指定 */
-                font-size: 30px; /* 文字サイズを30pxに設定 */
-                color: white; /* 文字色を白に設定 */
-                text-shadow: -4px -4px 8px rgba(0, 0, 0, 1), 4px -4px 8px rgba(0, 0, 0, 1), -4px 4px 8px rgba(0, 0, 0, 1), 4px 4px 8px rgba(0, 0, 0, 1);
-                display: flex;
-                justify-content: center;
-                align-items: center;
+                height: 100vh;
+                overflow: hidden;
             }
-            .air-space {
-                height: 20px
-                width: 100%
+        
+            .ball {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 100px;
+                height: 100px;
+                animation: moveBall 2s infinite;
             }
-            .scroll-animate-element {
-                opacity: 0;
-                margin: 50px 0; /* 上下に50pxのマージンを追加 */
-            }
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>IlluminaOrigin</h1>
-        <nav>
-            <ul><br class="sp">
-                <li><a href="index.html">ホーム</a></li>
-                <li><a href="info.html">情報</a></li>
-                <li><a href="developer.html">制作陣</a></li>
-                <li><a href="contact.html">お問い合わせ</a></li>
-            </ul>
-        </nav>
-    </header>
-    <style>
-    div {
-      text-align: center;
-    }
-
-    .game-container {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      overflow: hidden;
-    }
-
-    .ball {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 100px;
-      height: 100px;
-      animation: moveBall 2s infinite;
-    }
-
-    @keyframes moveBall {
-      0% {
-        transform: translate(-50%, -50%);
-      }
-      100% {
-        transform: translate(calc(100% - 100px), calc(100% - 100px));
-      }
-    }
-  </style>
-    <div class="empty-space">
-      <p>404 Not Found</p>
-      <div class="game-container">
-      <img class="ball" src="image/rarala.jpg">
-      </div>
-    </div>
-  
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const ball = document.querySelector('.ball');
-      const gameContainer = document.querySelector('.game-container');
-      const containerWidth = gameContainer.clientWidth;
-      const containerHeight = gameContainer.clientHeight;
-      const ballSize = 100;
-      const ballSpeed = 5;
-      let x = containerWidth / 2 - ballSize / 2;
-      let y = containerHeight / 2 - ballSize / 2;
-      let dx = ballSpeed;
-      let dy = ballSpeed;
-
-      function moveBall() {
-        x += dx;
-        y += dy;
-
-        if (x + ballSize >= containerWidth || x <= 0) {
-          dx *= -1;
-        }
-
-        if (y + ballSize >= containerHeight || y <= 0) {
-          dy *= -1;
-        }
-
-        ball.style.left = x + 'px';
-        ball.style.top = y + 'px';
-
-        requestAnimationFrame(moveBall);
-      }
-
-      moveBall();
-    });
-  </script>
-    <footer class="scroll-animate-element">
-        <p>&copy; 2023 IlluminaOrigin. All rights reserved.<br>Music by 舞音はく.<br>※当サービスは公式のMinecraftサービスではありません。</p>
-    </footer>
-    <script>
-        var video = document.getElementById("background-video");
-        var muteButton = document.getElementById("mute-button");   
-        // windowの高さに応じてCSS変数に異なる値を設定する関数
-        function setWindowHeight() {
-            const windowHeight = window.innerHeight;
-            let adjustedHeight;
-            if (window.innerWidth >= 768) {
-                // PCの場合
-                adjustedHeight = windowHeight - 420;
-            } else {
-                // スマートフォンの場合
-                adjustedHeight = windowHeight - 215;
-            }
-            document.documentElement.style.setProperty('--adjusted-window-height', `${adjustedHeight}px`);
-        }
-        // ページロード時とウィンドウサイズ変更時にsetWindowHeight関数を実行
-        window.addEventListener('load', setWindowHeight);
-        window.addEventListener('resize', setWindowHeight);
-        function onScroll() {
-            const elements = document.querySelectorAll('.scroll-animate-element');
-            elements.forEach((element) => {
-                const elementTop = element.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-                // 要素が画面内に入ったらクラスを追加してアニメーションを付ける
-                if (elementTop < windowHeight) {
-                    element.classList.add('fade-in');
+        
+            @keyframes moveBall {
+                0% {
+                    transform: translate(-50%, -50%);
                 }
+                100% {
+                    transform: translate(calc(100% - 100px), calc(100% - 100px));
+                }
+            }
+        </style>
+
+        <!-- 404ページの内容 -->
+        <div class="empty-space">
+            <p>404 Not Found</p>
+            <div class="game-container">
+                <img class="ball" src="https://karonyt.github.io/rpg/image/rarala.jpg">
+            </div>
+        </div>
+        
+        <!-- 404ページ用のJavaScript -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const ball = document.querySelector('.ball');
+                const gameContainer = document.querySelector('.game-container');
+                const containerWidth = gameContainer.clientWidth;
+                const containerHeight = gameContainer.clientHeight;
+                const ballSize = 100;
+                const ballSpeed = 5;
+                let x = containerWidth / 2 - ballSize / 2;
+                let y = containerHeight / 2 - ballSize / 2;
+                let dx = ballSpeed;
+                let dy = ballSpeed;
+        
+                function moveBall() {
+                    x += dx;
+                    y += dy;
+                    if (x + ballSize >= containerWidth || x <= 0) dx *= -1
+                    if (y + ballSize >= containerHeight || y <= 0) dy *= -1        
+                    ball.style.left = x + 'px';
+                    ball.style.top = y + 'px';
+                    requestAnimationFrame(moveBall);
+                }
+        
+                moveBall();
             });
-        }
-        // ページロード時に実行
-        window.addEventListener('load', function () {
-            setWindowHeight(); // ウィンドウの高さを設定
-            onScroll(); // スクロールアニメーションを適用
-        });
-        // ウィンドウのリサイズ時にも実行
-        window.addEventListener('resize', setWindowHeight);
-        window.addEventListener('scroll', onScroll);
-        function toggleMute() {
-            if (video.muted) {
-                video.muted = false;
-                muteButton.classList.remove("on");
-                muteButton.classList.add("off");
-                fadeInAudio();
-            } else {
-                video.muted = true;
-                muteButton.classList.remove("off");
-                muteButton.classList.add("on");
-                fadeOutAudio();
-                setTimeout(function() {
-                    video.muted = true;
-                }, 1000); // フェードアウトが終わったら音声をミュート
-            }
-        }
+        </script>
 
-        // 音声をフェードイン
-        function fadeInAudio() {
-            var currentVolume = 0;
-            video.volume = 0; // ミュートの場合はvolumeが0なので、一時的に設定
-            video.muted = false; // フェードイン時にミュートを解除
-            var fadeInterval = setInterval(function() {
-                currentVolume += 0.1;
-                if (currentVolume >= 0.9) {
-                    clearInterval(fadeInterval);
-                }
-                video.volume = currentVolume;
-            }, 100);
-        }
+        <!-- Footerを設定 -->
+        <footer class="scroll-animate-element">
+            <p>&copy; 2023 IlluminaOrigin. All rights reserved.<br>Music by 舞音はく.<br>※当サービスは公式のMinecraftサービスではありません。</p>
+        </footer>
 
-        // 音声をフェードアウト
-        function fadeOutAudio() {
-            var currentVolume = 1;
-            var fadeInterval = setInterval(function() {
-                currentVolume -= 0.1;
-                if (currentVolume <= 0.1) {
-                    clearInterval(fadeInterval);
-                }
-                video.volume = currentVolume;
-            }, 100);
-        }
-    </script>
-</body>
+        <!-- JavaScriptファイルを指定 -->
+        <script src="https://karonyt.github.io/rpg/global.js"></script>
+    </body>
 </html>
