@@ -111,6 +111,39 @@ section p {
     height: 200px;
     width: 100%;
 }
+
+.team-member {
+    background-color: #444;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.team-member h3 {
+    font-size: 50px;
+    margin-bottom: 5px;
+}
+
+.team-member p {
+    font-size: 25px;
+}
+
+.team-member img {
+    width: 200px; /* 画像の幅を100pxに設定 */
+    height: 200px; /* 画像の高さを100pxに設定 */
+    border-radius: 50%; /* 画像を丸く表示 */
+    margin-right: 10px; /* 画像とテキストの間に余白を設定 */
+}
+
+.team-member {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center; /* 画像とテキストを縦方向に中央揃え */
+}
+
 /* アニメーション */
 @keyframes fadeIn {
     0% {
@@ -418,5 +451,15 @@ video {
     .scroll-animate-element {
         opacity: 0;
         margin: 50px 0; /* 上下に50pxのマージンを追加 */
+    }
+
+    .team-member {
+        padding: 5px;
+    }
+    .team-member h3 {
+        font-size: 18px;
+    }
+    .team-member p {
+        font-size: 14px;
     }
 }
