@@ -1,74 +1,90 @@
-const video = document.getElementById("background-video");
-const muteButton = document.getElementById("mute-button");
-const elements = document.querySelectorAll('.scroll-animate-element');
+let video = document.getElementById("background-video");
+let muteButton = document.getElementById("mute-button");   
 
-// ウィンドウの高さに応じてCSS変数に異なる値を設定
+// windowの高さに応じてCSS変数に異なる値を設定する関数
 function setWindowHeight() {
     const windowHeight = window.innerHeight;
-    let adjustedHeight = windowHeight - (window.innerWidth >= 1535 ? 420 : window.innerWidth >= 768 ? 305 : 215);
+    let adjustedHeight;
+    if (window.innerWidth >= 1535) {
+        // PCの場合
+        adjustedHeight = windowHeight - 420;
+    } else if (window.innerWidth >= 768) {
+        //タブレットの場合
+        adjustedHeight = windowHeight - 305;
+    } else {
+        // スマートフォンの場合
+        adjustedHeight = windowHeight - 215;
+    }
     document.documentElement.style.setProperty('--adjusted-window-height', `${adjustedHeight}px`);
 }
 
-// スクロール時のアニメーション処理
+// ページロード時とウィンドウサイズ変更時にsetWindowHeight関数を実行
+window.addEventListener('load', setWindowHeight);
+window.addEventListener('resize', setWindowHeight);
+
+//スクロール時に実行
 function onScroll() {
-    const windowHeight = window.innerHeight;
-    elements.forEach(element => {
-        if (element.getBoundingClientRect().top < windowHeight) {
+    const elements = document.querySelectorAll('.scroll-animate-element');
+    elements.forEach((element) => {
+        const elementTop = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        // 要素が画面内に入ったらクラスを追加してアニメーションを付ける
+        if (elementTop < windowHeight) {
             element.classList.add('fade-in');
         }
     });
 }
 
-// ミュートトグルの処理
+// ページロード時に実行
+window.addEventListener('load', function () {
+    setWindowHeight(); // ウィンドウの高さを設定
+    onScroll(); // スクロールアニメーションを適用
+});
+
+// ウィンドウのリサイズ時にも実行
+window.addEventListener('resize', setWindowHeight);
+window.addEventListener('scroll', onScroll);
+
+//音楽のオンオフ切り替え
 function toggleMute() {
-    const fadeInterval = setInterval(() => {
-        video.volume = video.muted ? Math.min(video.volume + 0.1, 0.9) : Math.max(video.volume - 0.1, 0.1);
-        if ((video.muted && video.volume >= 0.9) || (!video.muted && video.volume <= 0.1)) {
-            clearInterval(fadeInterval);
-            if (!video.muted) video.muted = true;
-        }
-    }, 100);
-
-    muteButton.classList.toggle("on");
-    muteButton.classList.toggle("off");
-
-    if (!video.muted) fadeInAudio();
-    else fadeOutAudio();
+    if (video.muted) {
+        video.muted = false;
+        muteButton.classList.remove("on");
+        muteButton.classList.add("off");
+        fadeInAudio();
+    } else {
+        video.muted = true;
+        muteButton.classList.remove("off");
+        muteButton.classList.add("on");
+        fadeOutAudio();
+        setTimeout(function() {
+            video.muted = true;
+        }, 1000); // フェードアウトが終わったら音声をミュート
+    }
 }
 
-// 音声をフェードインする処理
+// 音声をフェードイン
 function fadeInAudio() {
-    video.muted = false;
-    fadeAudio(0.9, true);
-}
-
-// 音声をフェードアウトする処理
-function fadeOutAudio() {
-    fadeAudio(0.1, false);
-}
-
-// 音声をフェードする共通処理
-function fadeAudio(targetVolume, fadeIn) {
-    const fadeInterval = setInterval(() => {
-        const currentVolume = video.volume;
-        if ((fadeIn && currentVolume >= targetVolume) || (!fadeIn && currentVolume <= targetVolume)) {
+    let currentVolume = 0;
+    video.volume = 0; // ミュートの場合はvolumeが0なので、一時的に設定
+    video.muted = false; // フェードイン時にミュートを解除
+    let fadeInterval = setInterval(function() {
+        currentVolume += 0.1;
+        if (currentVolume >= 0.9) {
             clearInterval(fadeInterval);
         }
-        video.volume = fadeIn ? currentVolume + 0.1 : currentVolume - 0.1;
+        video.volume = currentVolume;
     }, 100);
 }
 
-// ページの初期化処理
-function initializePage() {
-    setWindowHeight();
-    onScroll();
-    // ビデオがメタデータを読み込んだ後、音量を0に設定
-    video.addEventListener('loadedmetadata', () => { video.volume = 0; });
-    window.addEventListener('resize', setWindowHeight);
-    window.addEventListener('scroll', onScroll);
+// 音声をフェードアウト
+function fadeOutAudio() {
+    let currentVolume = 1;
+    let fadeInterval = setInterval(function() {
+        currentVolume -= 0.1;
+        if (currentVolume <= 0.1) {
+            clearInterval(fadeInterval);
+        }
+        video.volume = currentVolume;
+    }, 100);
 }
-
-// ページロード時の初期化
-window.addEventListener('load', initializePage);
-// ミュートボタンのクリックイベントにトグル処理を関連付け
-muteButton.addEventListener('click', toggleMute);
