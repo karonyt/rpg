@@ -1,1 +1,422 @@
+/* リセットCSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+
+html {
+    scroll-behavior: smooth; /* スムーズスクロールを有効にする */
+    height: 100%; /* 追加：html要素の高さを100%に設定 */
+}
+
+/* ドット風のウェブフォントを読み込む */
+body {
+    font-family: 'Courier New', monospace; /* 代替のフォントを指定 */
+    font-size: 35px; /* 文字サイズを35pxに設定 */
+    color: white; /* 文字色を白に設定 */
+    text-shadow: -8px -8px 16px rgba(0, 0, 0, 1), 8px -8px 16px rgba(0, 0, 0, 1), -8px 8px 16px rgba(0, 0, 0, 1), 8px 8px 16px rgba(0, 0, 0, 1);
+    margin: 0;
+    padding: 0;
+    overflow: hidden visible;
+}
+
+/* アニメーションを初期状態で非表示にする */
+.scroll-animate-element {
+    opacity: 0;
+    margin: 200px 0; /* 上下に50pxのマージンを追加 */
+}
+
+/* スクロールして要素が画面に表示されたらフェードインする */
+.scroll-animate-element.fade-in {
+    opacity: 1;
+    transition: opacity 2s ease;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 50px;
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav li {
+    display: inline-block;
+    margin-right: 50px;
+}
+
+a {
+    text-decoration: none; /* 下線をなくす */
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+/* マウスホバー時のスタイルをカスタマイズ（オプション） */
+a:hover {
+    color: orange; /* オレンジ色に設定 */
+}
+nav a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffcc00;
+}
+
+main {
+    padding: 20px;
+    margin-left: 50px; /* 左側に50pxのマージンを追加 */
+    margin-right: 50px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+section h2 {
+    font-size: 50px;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+section p {
+    line-height: 1.8;
+}
+
+.empty-space {
+    height: calc(var(--adjusted-window-height, 100vh));
+    width: 100%;
+    font-family: 'Courier New', monospace; /* 代替のフォントを指定 */
+    font-size: 80px; /* 文字サイズを80pxに設定 */
+    color: white; /* 文字色を白に設定 */
+    text-shadow: -8px -8px 16px rgba(0, 0, 0, 1), 8px -8px 16px rgba(0, 0, 0, 1), -8px 8px 16px rgba(0, 0, 0, 1), 8px 8px 16px rgba(0, 0, 0, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.air-space {
+    height: 200px;
+    width: 100%;
+}
+/* アニメーション */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section {
+    animation: fadeIn 1s ease;
+}
+
+/* フッター */
+footer {
+    text-align: center;
+    background-color: #333;
+    color: #fff;   
+    padding: 10px;
+}
+
+/* 音のオンオフボタンデザイン */
+#mute-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#mute-button span {
+    display: inline-block;
+    padding: 2px;
+    text-decoration: none;
+}
+
+/* オンの場合の下線スタイル */
+#mute-button.on span.on-text {
+    text-decoration: underline solid;
+    text-decoration-color: white; /* 下線の色を白に指定 */
+}
+
+/* オフの場合の下線スタイル */
+#mute-button.off span.off-text {
+    text-decoration: underline solid;
+    text-decoration-color: white; /* 下線の色を白に指定 */
+}
+
+/* PCの要素だけを表示 */
+.pc {
+    display: inline;
+}
+
+.sp {
+    display: none;
+}
+.tb {
+    display: none;
+}
+
+/* 背景の動画 */
+video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+}
+
+/* ホーム画面の左下の画像 */
+.start-image {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* タブレットサイズ対応 */
+@media screen and (max-width: 1534px) {
+
+    body {
+        font-family: 'Courier New', monospace; /* 代替のフォントを指定 */
+        font-size: 25px; /* 文字サイズを48pxに設定 */
+        color: white; /* 文字色を白に設定 */
+        text-shadow: -2px -2px 4px rgba(0, 0, 0, 1), 2px -2px 4px rgba(0, 0, 0, 1), -2px 2px 4px rgba(0, 0, 0, 1), 2px 2px 4px rgba(0, 0, 0, 1);
+    }
+
+    #mute-button {
+        position: absolute;
+        top: 30px;
+        right: 20px;
+        padding: 10px;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    #mute-button span {
+        display: inline-block;
+        padding: 1px;
+        text-decoration: none;
+    }
+
+    header {
+        padding: 10px 20px;
+    }
+
+    footer {
+        text-align: center;
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 40px;
+        margin: 0;
+    }
+
+    nav ul {
+        list-style: none;
+    }
+
+    nav li {
+        display: inline-block;
+        margin-right: 5px;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: #fff;
+        transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+        color: #ffcc00;
+    }
+
+    main {
+        padding: 20px;
+        margin-left: 20px; /* 左側に20pxのマージンを追加 */
+        margin-right: 20px; /* 右側に20pxのマージンを追加 */
+    }
+
+    section {
+        margin-bottom: 10px;
+    }
+
+    section h2 {
+        font-size: 40px;
+        border-bottom: 2px solid #fff;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+    }
+
+    section p {
+        line-height: 1.8;
+    }
+    .pc {
+        display: none;
+    }
+    .sp {
+        display: none;
+    }
+    .tb {
+        display: inline;
+    }
+    .empty-space {
+        height: calc(var(--adjusted-window-height, 100vh));
+        width: 100%;
+        font-family: 'Courier New', monospace; /* 代替のフォントを指定 */
+        font-size: 40px; /* 文字サイズを20pxに設定 */
+        color: white; /* 文字色を白に設定 */
+        text-shadow: -4px -4px 8px rgba(0, 0, 0, 1), 4px -4px 8px rgba(0, 0, 0, 1), -4px 4px 8px rgba(0, 0, 0, 1), 4px 4px 8px rgba(0, 0, 0, 1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .air-space {
+        height: 20px;
+        width: 100%;
+    }
+
+    .scroll-animate-element {
+        opacity: 0;
+        margin: 50px 0; /* 上下に50pxのマージンを追加 */
+    }
+}
+
+/* スマートフォン対応 */
+@media screen and (max-width: 767px) {
+
+    body {
+        font-family: 'Courier New', monospace; /* 代替のフォントを指定 */
+        font-size: 15px; /* 文字サイズを48pxに設定 */
+        color: white; /* 文字色を白に設定 */
+        text-shadow: -2px -2px 4px rgba(0, 0, 0, 1), 2px -2px 4px rgba(0, 0, 0, 1), -2px 2px 4px rgba(0, 0, 0, 1), 2px 2px 4px rgba(0, 0, 0, 1);
+    }
+
+    #mute-button {
+        position: absolute;
+        top: 30px;
+        right: 20px;
+        padding: 10px;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    #mute-button span {
+        display: inline-block;
+        padding: 1px;
+        text-decoration: none;
+    }
+
+    header {
+        padding: 10px 20px;
+    }
+
+    footer {
+        text-align: center;
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 30px;
+        margin: 0;
+    }
+
+    nav ul {
+        list-style: none;
+    }
+
+    nav li {
+        display: inline-block;
+        margin-right: 5px;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: #fff;
+        transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+        color: #ffcc00;
+    }
+
+    main {
+        padding: 20px;
+        margin-left: 20px; /* 左側に20pxのマージンを追加 */
+        margin-right: 20px; /* 右側に20pxのマージンを追加 */
+    }
+
+    section {
+        margin-bottom: 10px;
+    }
+
+    section h2 {
+        font-size: 18px;
+        border-bottom: 2px solid #fff;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+    }
+
+    section p {
+        line-height: 1.8;
+    }
+
+    .pc {
+        display: none;
+    }
+
+    .sp {
+        display: inline;
+    }
+
+    .tb {
+        display: none;
+    }
+
+    .empty-space {
+        height: calc(var(--adjusted-window-height, 100vh));
+        width: 100%;
+        font-family: 'Courier New', monospace; /* 代替のフォントを指定 */
+        font-size: 20px; /* 文字サイズを20pxに設定 */
+        color: white; /* 文字色を白に設定 */
+        text-shadow: -4px -4px 8px rgba(0, 0, 0, 1), 4px -4px 8px rgba(0, 0, 0, 1), -4px 4px 8px rgba(0, 0, 0, 1), 4px 4px 8px rgba(0, 0, 0, 1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .air-space {
+        height: 20px;
+        width: 100%;
+    }
+
+    .scroll-animate-element {
+        opacity: 0;
+        margin: 50px 0; /* 上下に50pxのマージンを追加 */
+    }
+}
