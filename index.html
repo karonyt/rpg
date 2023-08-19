@@ -1,115 +1,125 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta name="msapplication-square70x70logo" content="/site-tile-70x70.png">
-<meta name="msapplication-square150x150logo" content="/site-tile-150x150.png">
-<meta name="msapplication-wide310x150logo" content="/site-tile-310x150.png">
-<meta name="msapplication-square310x310logo" content="/site-tile-310x310.png">
-<meta name="msapplication-TileColor" content="#0078d7">
-<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="favicon/favicon.ico">
-<link rel="icon" type="image/vnd.microsoft.icon" href="favicon/favicon.ico">
-<link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-touch-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-touch-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-touch-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-touch-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-touch-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-touch-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-touch-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-touch-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="36x36" href="favicon/android-chrome-36x36.png">
-<link rel="icon" type="image/png" sizes="48x48" href="favicon/android-chrome-48x48.png">
-<link rel="icon" type="image/png" sizes="72x72" href="favicon/android-chrome-72x72.png">
-<link rel="icon" type="image/png" sizes="96x96" href="favicon/android-chrome-96x96.png">
-<link rel="icon" type="image/png" sizes="128x128" href="favicon/android-chrome-128x128.png">
-<link rel="icon" type="image/png" sizes="144x144" href="favicon/android-chrome-144x144.png">
-<link rel="icon" type="image/png" sizes="152x152" href="favicon/android-chrome-152x152.png">
-<link rel="icon" type="image/png" sizes="192x192" href="favicon/android-chrome-192x192.png">
-<link rel="icon" type="image/png" sizes="256x256" href="favicon/android-chrome-256x256.png">
-<link rel="icon" type="image/png" sizes="384x384" href="favicon/android-chrome-384x384.png">
-<link rel="icon" type="image/png" sizes="512x512" href="favicon/android-chrome-512x512.png">
-<link rel="icon" type="image/png" sizes="36x36" href="favicon/icon-36x36.png">
-<link rel="icon" type="image/png" sizes="48x48" href="favicon/icon-48x48.png">
-<link rel="icon" type="image/png" sizes="72x72" href="favicon/icon-72x72.png">
-<link rel="icon" type="image/png" sizes="96x96" href="favicon/icon-96x96.png">
-<link rel="icon" type="image/png" sizes="128x128" href="favicon/icon-128x128.png">
-<link rel="icon" type="image/png" sizes="144x144" href="favicon/icon-144x144.png">
-<link rel="icon" type="image/png" sizes="152x152" href="favicon/icon-152x152.png">
-<link rel="icon" type="image/png" sizes="160x160" href="favicon/icon-160x160.png">
-<link rel="icon" type="image/png" sizes="192x192" href="favicon/icon-192x192.png">
-<link rel="icon" type="image/png" sizes="196x196" href="favicon/icon-196x196.png">
-<link rel="icon" type="image/png" sizes="256x256" href="favicon/icon-256x256.png">
-<link rel="icon" type="image/png" sizes="384x384" href="favicon/icon-384x384.png">
-<link rel="icon" type="image/png" sizes="512x512" href="favicon/icon-512x512.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon/icon-16x16.png">
-<link rel="icon" type="image/png" sizes="24x24" href="favicon/icon-24x24.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon/icon-32x32.png">
-<link rel="manifest" href="favicon/manifest.json">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IlluminaOrigin</title>
-    <link rel="stylesheet" type="text/css" href="https://karonyt.github.io/rpg/global.css">
-</head>
-<body>
-    <header>
-        <video id="background-video" autoplay loop muted>
-            <source src="video.mp4" type="video/mp4">
-            <!-- 動画のフォーマットを追加 (WebMやOggなど) -->
-        </video>
-        <a id="mute-button" class="on" onclick="toggleMute()">
-            Sound:<span class="off-text">On</span>|<span class="on-text">Off</span>
-        </a>
-        <h1>IlluminaOrigin</h1>
-        <nav>
-            <ul><br class="sp">
-                <li><a href="index.html">ホーム</a></li>
-                <li><a href="info.html">情報</a></li>
-                <li><a href="developer.html">制作陣</a></li>
-                <li><a href="contact.html">お問い合わせ</a></li>
-            </ul>
-        </nav>
-    </header>
-    <div class="empty-space"><p>Welcome to our server!!</p></div>
-    <main>
-        <a href="https://karonyt.github.io/rpg">
-            <img id="start-image" class="sp" src="logo_sp.png">
-            <img id="start-image" class="pc" src="logo.png">
-            <img id="start-image" class="tb" src="logo_tb.png">
-        </a>
-        <div class="fixed-element">
-            
-            <section class="scroll-animate-element">
-                <h2>IlluminaOrigin</h2>
-                <p>4000×3000の広大なフィールドを旅人は自由に冒険できる。ストーリーに縛られることはない。</p>
-            </section>
-            
-            <section class="scroll-animate-element">
-                <h2>今までにない体験を...</h2>
-                <p>統合版史上初であるリアルタイムマップ等の独自技術の開発を行い今までにないサービスを提供。新鮮味あふれる時間を楽しめる。</p>
-            </section>
-            
-            <section class="scroll-animate-element">
-                <h2>最新情報</h2>
-                <ul>
-                    <li><a href="https://karonyt.github.io/rpg/articles/no1.html">公式サイト公開に関するお知らせ</a></li>
+    <head>
+        <!-- ファビコンを指定 -->
+        <meta name="msapplication-square70x70logo" content="/site-tile-70x70.png">
+        <meta name="msapplication-square150x150logo" content="/site-tile-150x150.png">
+        <meta name="msapplication-wide310x150logo" content="/site-tile-310x150.png">
+        <meta name="msapplication-square310x310logo" content="/site-tile-310x310.png">
+        <meta name="msapplication-TileColor" content="#0078d7">
+        <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="favicon/favicon.ico">
+        <link rel="icon" type="image/vnd.microsoft.icon" href="favicon/favicon.ico">
+        <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-touch-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="36x36" href="favicon/android-chrome-36x36.png">
+        <link rel="icon" type="image/png" sizes="48x48" href="favicon/android-chrome-48x48.png">
+        <link rel="icon" type="image/png" sizes="72x72" href="favicon/android-chrome-72x72.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="favicon/android-chrome-96x96.png">
+        <link rel="icon" type="image/png" sizes="128x128" href="favicon/android-chrome-128x128.png">
+        <link rel="icon" type="image/png" sizes="144x144" href="favicon/android-chrome-144x144.png">
+        <link rel="icon" type="image/png" sizes="152x152" href="favicon/android-chrome-152x152.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="favicon/android-chrome-192x192.png">
+        <link rel="icon" type="image/png" sizes="256x256" href="favicon/android-chrome-256x256.png">
+        <link rel="icon" type="image/png" sizes="384x384" href="favicon/android-chrome-384x384.png">
+        <link rel="icon" type="image/png" sizes="512x512" href="favicon/android-chrome-512x512.png">
+        <link rel="icon" type="image/png" sizes="36x36" href="favicon/icon-36x36.png">
+        <link rel="icon" type="image/png" sizes="48x48" href="favicon/icon-48x48.png">
+        <link rel="icon" type="image/png" sizes="72x72" href="favicon/icon-72x72.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="favicon/icon-96x96.png">
+        <link rel="icon" type="image/png" sizes="128x128" href="favicon/icon-128x128.png">
+        <link rel="icon" type="image/png" sizes="144x144" href="favicon/icon-144x144.png">
+        <link rel="icon" type="image/png" sizes="152x152" href="favicon/icon-152x152.png">
+        <link rel="icon" type="image/png" sizes="160x160" href="favicon/icon-160x160.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="favicon/icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="196x196" href="favicon/icon-196x196.png">
+        <link rel="icon" type="image/png" sizes="256x256" href="favicon/icon-256x256.png">
+        <link rel="icon" type="image/png" sizes="384x384" href="favicon/icon-384x384.png">
+        <link rel="icon" type="image/png" sizes="512x512" href="favicon/icon-512x512.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon/icon-16x16.png">
+        <link rel="icon" type="image/png" sizes="24x24" href="favicon/icon-24x24.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon/icon-32x32.png">
+        <link rel="manifest" href="favicon/manifest.json">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>IlluminaOrigin</title>
+
+        <!-- CSSファイルを指定 -->
+        <link rel="stylesheet" type="text/css" href="https://karonyt.github.io/rpg/global.css">
+    </head>
+    <body>
+        <!-- Header(上のやつ) -->
+        <header>
+            <!-- 背景の動画 -->
+            <video id="background-video" autoplay loop muted>
+                <source src="video.mp4" type="video/mp4">
+            </video>
+            <a id="mute-button" class="on" onclick="toggleMute()">
+                Sound:<span class="off-text">On</span>|<span class="on-text">Off</span>
+            </a>
+            <h1>IlluminaOrigin</h1>
+            <nav>
+                <ul><br class="sp">
+                    <li><a href="index.html">ホーム</a></li>
+                    <li><a href="info.html">情報</a></li>
+                    <li><a href="developer.html">制作陣</a></li>
+                    <li><a href="contact.html">お問い合わせ</a></li>
                 </ul>
-            </section>
+            </nav>
+        </header>
+        <div class="empty-space"><p>Welcome to our server!!</p></div>
+
+        <!-- メインの要素 -->
+        <main>
+            <a href="https://karonyt.github.io/rpg">
+                <img id="start-image" class="sp" src="logo_sp.png">
+                <img id="start-image" class="pc" src="logo.png">
+                <img id="start-image" class="tb" src="logo_tb.png">
+            </a>
+            <div class="fixed-element">
+
+                <section class="scroll-animate-element">
+                    <h2>IlluminaOrigin</h2>
+                    <p>4000×3000の広大なフィールドを旅人は自由に冒険できる。ストーリーに縛られることはない。</p>
+                </section>
             
-            <section class="scroll-animate-element">
-                <h2>さぁ冒険を始めよう！</h2>
-                <ul>
-                    <li><a href="https://twitter.com/irumina_rpg">公式Twitter</a></li>
-                    <li><a href="https://discord.gg/cXr4bC9sPY">公式Discord</a></li>
-                    <li><a href="https://rpgrealtimemap.karonyt.repl.co/">リアルタイムマップ</a></li>
-                </ul>
-            </section>
+                <section class="scroll-animate-element">
+                    <h2>今までにない体験を...</h2>
+                    <p>統合版史上初であるリアルタイムマップ等の独自技術の開発を行い今までにないサービスを提供。新鮮味あふれる時間を楽しめる。</p>
+                </section>
             
-        </div>
-    </main>
-    <footer class="scroll-animate-element">
-        <p>&copy; 2023 IlluminaOrigin. All rights reserved.<br>Music by 舞音はく.<br>※当サービスは公式のMinecraftサービスではありません。</p>
-    </footer>
+                <section class="scroll-animate-element">
+                    <h2>最新情報</h2>
+                    <ul>
+                        <li><a href="https://karonyt.github.io/rpg/articles/no1.html">公式サイト公開に関するお知らせ</a></li>
+                    </ul>
+                </section>
+
+                <section class="scroll-animate-element">
+                    <h2>さぁ冒険を始めよう！</h2>
+                    <ul>
+                        <li><a href="https://twitter.com/irumina_rpg">公式Twitter</a></li>
+                        <li><a href="https://discord.gg/cXr4bC9sPY">公式Discord</a></li>
+                        <li><a href="https://rpgrealtimemap.karonyt.repl.co/">リアルタイムマップ</a></li>
+                    </ul>
+                </section>
+            
+            </div>
+        </main>
+
+        <!-- Footerを設定 -->
+        <footer class="scroll-animate-element">
+            <p>&copy; 2023 IlluminaOrigin. All rights reserved.<br>Music by 舞音はく.<br>※当サービスは公式のMinecraftサービスではありません。</p>
+        </footer>
+
+        <!-- JavaScriptファイルを指定 -->
         <script src="https://karonyt.github.io/rpg/global.js"></script>
-</body>
+    </body>
 </html>
