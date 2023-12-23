@@ -341,6 +341,10 @@ video {
         opacity: 0;
         margin: 50px 0; /* 上下に50pxのマージンを追加 */
     }
+    .team-member img {
+        width: 150px;
+        height: 150px;
+    }
 }
 
 /* スマートフォン対応 */
@@ -466,5 +470,9 @@ video {
     }
     .team-member p {
         font-size: 14px;
+    }
+    .team-member img {
+        width: 100px;
+        height: 100px;
     }
 }
