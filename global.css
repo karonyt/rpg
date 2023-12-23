@@ -26,14 +26,14 @@ body {
     overflow: hidden visible;
 }
 
+/**
 header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    /* 要素の幅をページ幅に合わせる */
-    /* 必要に応じてその他のスタイルを追加 */
 }
+*/
 
 /* アニメーションを初期状態で非表示にする */
 .scroll-animate-element {
