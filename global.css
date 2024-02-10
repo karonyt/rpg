@@ -170,8 +170,8 @@ section p {
     /* 画像とテキストを縦方向に中央揃え */
 }
 
-.map_image {
-    align-items: center;
+.map_image img{
+    align-content: center;
 }
 
 /* アニメーション */
