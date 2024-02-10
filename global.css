@@ -171,7 +171,7 @@ section p {
 }
 
 .map_image img{
-    align-content: center;
+    align-items: center;
 }
 
 /* アニメーション */
